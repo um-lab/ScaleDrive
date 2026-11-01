@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="ScaleDrive: Scaling Action-Free Video Latent Prediction for Transferable Representations in End-to-End Autonomous Driving.">
+  <meta property="og:title" content="ScaleDrive: Scaling Action-Free Video Latent Prediction for Transferable Representations in End-to-End Autonomous Driving">
+  <meta property="og:description" content="An academic project page for action-free video latent prediction and transferable driving representations.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://um-lab.github.io/ScaleDrive/assets/overview.webp">
+  <title>ScaleDrive | Academic Project Page</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=3">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="container">
+        <h1>Scaling Action-Free Video Latent Prediction for Transferable Representations in End-to-End Autonomous Driving</h1>
+        <nav class="resource-links" aria-label="Project links">
+          <a href="#abstract"><span aria-hidden="true">▤</span> Abstract</a>
+          <a href="#results"><span aria-hidden="true">▥</span> Results</a>
+          <a href="#videos"><span aria-hidden="true">▶</span> Videos</a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="section band" id="abstract">
+      <div class="container prose">
+        <h2>Abstract</h2>
+        <p>End-to-end autonomous driving policies require effective visual representations that capture both spatial scene structure and temporal dynamics. Video latent prediction has emerged as an effective paradigm for learning spatiotemporal visual representations, yet it remains unclear whether scaling this objective with action-free driving videos can yield representations that benefit end-to-end planning. We study action-free video latent prediction as a scalable pretraining objective and introduce ScaleDrive, a driving-oriented framework pretrained exclusively on large-scale internet open-world driving videos, without action annotations or benchmark-specific data. We keep the pretrained video encoder frozen during downstream end-to-end planning training to isolate the transferability of representations learned from internet driving videos. Ego-motion and depth probes show that scaling action-free video pretraining progressively strengthens the temporal and geometric information encoded in the frozen representation. We systematically study the visual representation transfer across different end-to-end driving policies and closed-loop benchmarks, where ScaleDrive consistently improves downstream performance and demonstrates that scaling action-free video latent prediction yields representations that generalize across both planning policy architectures and evaluation scenarios and protocols.</p>
+      </div>
+    </section>
+
+    <section class="teaser section-tight" aria-label="ScaleDrive overview">
+      <div class="container wide">
+        <figure>
+          <img src="assets/overview.webp" alt="Overview of ScaleDrive: action-free video latent prediction followed by frozen encoder transfer to driving policies" fetchpriority="high">
+          <figcaption>ScaleDrive learns from action-free internet driving videos and transfers a frozen video representation to downstream planning policies.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section band" id="results">
+      <div class="container wide">
+        <h2>Results comparison</h2>
+        <p class="section-intro">Scaling action-free video pretraining improves downstream planning and transfers across policy architectures.</p>
+        <figure class="research-figure">
+          <img src="assets/scaling.webp" alt="Results figure showing the effect of video pretraining scale and command-wise performance" loading="lazy">
+          <figcaption>Data scaling and command-wise planning results from the manuscript.</figcaption>
+        </figure>
+        <p class="result-text">On NAVSIMv1, increasing the pretraining pool from 0.5M to 6M clips raises PDMS from 92.77 to 93.61. Adding temporal-slice masking raises it to 93.79. The reported result is 93.8 PDMS on NAVSIMv1 and 90.5 EPDMS on NAVSIMv2.</p>
+        <h3>Transfer across planners</h3>
+        <p class="table-note">NAVSIMv1 PDMS; each ScaleDrive result is compared with the corresponding planner baseline.</p>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th scope="col">Planner</th><th scope="col">Baseline</th><th scope="col">With ScaleDrive</th><th scope="col">Gain</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">LTF</th><td>83.8</td><td>86.2</td><td>+2.4</td></tr>
+              <tr><th scope="row">DiffusionDrive</th><td>86.6</td><td>88.1</td><td>+1.5</td></tr>
+              <tr><th scope="row">DrivoR</th><td>93.1</td><td>93.4</td><td>+0.3</td></tr>
+              <tr><th scope="row">ChainFlow</th><td>92.6</td><td>93.2</td><td>+0.6</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="videos">
+      <div class="container wide">
+        <h2>Closed-loop videos</h2>
+        <p class="section-intro">Paired clips compare ScaleDrive with the V-JEPA2 baseline in the same scenes.</p>
+        <h3>Scene 001</h3>
+        <div class="video-grid">
+          <figure><video controls playsinline preload="metadata" aria-label="Scene 001 ScaleDrive closed-loop video"><source src="assets/video/scene01-scaledrive.mp4" type="video/mp4"></video><figcaption>ScaleDrive</figcaption></figure>
+          <figure><video controls playsinline preload="metadata" aria-label="Scene 001 V-JEPA2 baseline closed-loop video"><source src="assets/video/scene01-vjepa2.mp4" type="video/mp4"></video><figcaption>V-JEPA2 baseline</figcaption></figure>
+        </div>
+        <h3>Scene 004</h3>
+        <div class="video-grid">
+          <figure><video controls playsinline preload="metadata" aria-label="Scene 004 ScaleDrive closed-loop video"><source src="assets/video/scene04-scaledrive.mp4" type="video/mp4"></video><figcaption>ScaleDrive</figcaption></figure>
+          <figure><video controls playsinline preload="metadata" aria-label="Scene 004 V-JEPA2 baseline closed-loop video"><source src="assets/video/scene04-vjepa2.mp4" type="video/mp4"></video><figcaption>V-JEPA2 baseline</figcaption></figure>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container prose">
+      <p>ScaleDrive</p>
+      <p>Page layout inspired by the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template">Academic Project Page Template</a> and <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>
