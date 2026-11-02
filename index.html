@@ -11,7 +11,7 @@
   <meta property="og:image" content="https://um-lab.github.io/ScaleDrive/assets/overview.webp">
   <title>ScaleDrive | Academic Project Page</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=4">
+  <link rel="stylesheet" href="styles.css?v=5">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -19,6 +19,21 @@
     <section class="hero" id="top">
       <div class="container">
         <h1>Scaling Action-Free Video Latent Prediction for Transferable Representations in End-to-End Autonomous Driving</h1>
+        <p class="author-list">
+          <span>Xingtai Gui<sup>1,*†</sup></span>
+          <span>Xubin Zhou<sup>2,*</sup></span>
+          <span>Yucheng Zhou<sup>1,*</sup></span>
+          <span>Dongqian Guo<sup>1</sup></span>
+          <span>Jiahao Gong<sup>3</sup></span>
+          <span>Feiyang Tan<sup>3</sup></span>
+          <span>Jianbing Shen<sup>1,‡</sup></span>
+        </p>
+        <p class="affiliations">
+          <span><sup>1</sup> SKL-IOTSC, Department of AI, University of Macau</span>
+          <span><sup>2</sup> Harbin Institute of Technology</span>
+          <span><sup>3</sup> Afari Intelligent Drive</span>
+        </p>
+        <p class="author-notes"><span>* Equal contribution.</span><span>† Work done during the internship at Afari Intelligent Drive.</span><span>‡ Corresponding author.</span></p>
         <nav class="resource-links" aria-label="Project links">
           <a href="#abstract"><span aria-hidden="true">▤</span> Abstract</a>
           <a href="#results"><span aria-hidden="true">▥</span> Results</a>
@@ -50,22 +65,22 @@
         <p class="section-intro">Planning results across four evaluation benchmarks. The tables below are cropped from the manuscript.</p>
         <h3>NAVSIMv1</h3>
         <figure class="research-figure benchmark-figure">
-          <img src="assets/navsimv1-results.png" alt="NAVSIMv1 planning comparison table; ScaleDrive reaches 93.8 PDMS" loading="lazy">
+          <img src="assets/navsimv1-results.png?v=2" alt="NAVSIMv1 planning comparison table; ScaleDrive reaches 93.8 PDMS" loading="lazy">
           <figcaption>ScaleDrive reaches 93.8 PDMS with the visual encoder frozen.</figcaption>
         </figure>
         <h3>NAVSIMv2</h3>
         <figure class="research-figure benchmark-figure">
-          <img src="assets/navsimv2-results.png" alt="NAVSIMv2 planning comparison table; ScaleDrive reaches 90.5 EPDMS" loading="lazy">
+          <img src="assets/navsimv2-results.png?v=2" alt="NAVSIMv2 planning comparison table; ScaleDrive reaches 90.5 EPDMS" loading="lazy">
           <figcaption>ScaleDrive reaches 90.5 EPDMS.</figcaption>
         </figure>
         <h3>Bench2Drive</h3>
-        <figure class="research-figure benchmark-figure">
-          <img src="assets/bench2drive-results.png" alt="Bench2Drive comparison table of TFv6 with BEV, V-JEPA2, and ScaleDrive representations" loading="lazy">
+        <figure class="research-figure benchmark-figure compact-figure">
+          <img src="assets/bench2drive-results.png?v=2" alt="Bench2Drive comparison table of TFv6 with BEV, V-JEPA2, and ScaleDrive representations" loading="lazy">
           <figcaption>TFv6 with ScaleDrive improves Driving Score and Success Rate over the BEV baseline.</figcaption>
         </figure>
         <h3>HUGSIM</h3>
         <figure class="research-figure benchmark-figure">
-          <img src="assets/hugsim-results.png" alt="HUGSIM comparison table showing Route Completion and HD-Score across scenarios" loading="lazy">
+          <img src="assets/hugsim-results.png?v=2" alt="HUGSIM comparison table showing Route Completion and HD-Score across scenarios" loading="lazy">
           <figcaption>ScaleDrive improves average Route Completion and HD-Score for LTF and ChainFlow.</figcaption>
         </figure>
         <h3>Transfer across planners</h3>
